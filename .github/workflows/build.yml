@@ -38,11 +38,13 @@ jobs:
     - name: Clone circuitpython-build-tools development
       run: |
         git clone https://github.com/sommersoft/circuitpython-build-tools.git
+        cd circuitpython-build-tools
         git fetch
         git remote -v
         git branch
         git branch -r
         git checkout origin/gh_actions
+        cd ..
     - name: pip install development build-tools
       run: pip3 install -e ./circuitpython-build-tools
     - name: Build assets
