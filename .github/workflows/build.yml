@@ -35,5 +35,12 @@ jobs:
       run: |
         pylint adafruit_testrepo.py
         ([[ ! -d "examples" ]] || pylint --disable=missing-docstring,invalid-name,bad-whitespace examples/*.py)
+    - name: Clone circuitpython-build-tools development
+      run: |
+        git clone https://github.com/sommersoft/circuitpython-build-tools.git
+        git fetch
+        git checkout origin/gh_actions
+    - name: pip install development build-tools
+      run: pip3 install -e ./circuitpython-build-tools
     - name: Build assets
       run: circuitpython-build-bundles --filename_prefix adafruit-circuitpython-testrepo --library_location .
