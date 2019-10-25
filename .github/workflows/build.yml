@@ -26,8 +26,9 @@ jobs:
         submodules: true
     - name: Install deps
       run: |
+        sudo apt install -y gettext
         pip install -r requirements.txt
-        pip install circuitpython-build-tools Sphinx sphinx-rtd-theme
+        pip install Sphinx sphinx-rtd-theme
         pip install --force-reinstall pylint==1.9.2
     - name: CircuitPython version
       run: git describe --dirty --always --tags
@@ -40,9 +41,6 @@ jobs:
         git clone https://github.com/sommersoft/circuitpython-build-tools.git
         cd circuitpython-build-tools
         git fetch
-        git remote -v
-        git branch
-        git branch -r
         git checkout origin/gh_actions
         cd ..
     - name: pip install development build-tools
