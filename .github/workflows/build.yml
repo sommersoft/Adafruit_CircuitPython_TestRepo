@@ -44,7 +44,7 @@ jobs:
         pylint adafruit_testrepo.py
         ([[ ! -d "examples" ]] || pylint --disable=missing-docstring,invalid-name,bad-whitespace examples/*.py)
     - name: Build assets
-      run: circuitpython-build-bundles --filename_prefix adafruit-circuitpython-testrepo --library_location .
+      run: circuitpython-build-bundles --filename_prefix ${{ steps.repo-name.outputs.repo-name }} --library_location .
     - name: Build docs
       working-directory: docs
       run: sphinx-build -E -W -b html . _build/html
