@@ -10,6 +10,17 @@ jobs:
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo "$GITHUB_CONTEXT"
+    - name: Translate Repo Name
+      id: repo-name
+      run: |
+        echo ::set-output name=repo-name::$(
+        echo ${{ github.repository }} |
+        awk -F '\/' '{ print tolower($2) }' |
+        tr '_' '-'
+        )
+    - name: Show Translated Repo Name
+      run: |
+        echo 'Translated: ${{ steps.repo-name.outputs.repo-name }}'
     - name: Set up Python 3.6
       uses: actions/setup-python@v1
       with:
