@@ -65,7 +65,7 @@ jobs:
         SETUP-PY: ${{ contains(steps.need-pypi.outputs.setup-py, 'setup.py') }}
       with:
         entrypoint: /bin/echo
-        args: "The remaining PyPI Deployment steps will proceed: ${{ SETUP-PY }}""
+        args: "The remaining PyPI Deployment steps will proceed: ${{ SETUP-PY }}"
     - name: Set up Python
       if: contains(steps.need-pypi.outputs.setup-py, 'setup.py')
       uses: actions/setup-python@v1
