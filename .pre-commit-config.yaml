@@ -3,10 +3,13 @@
 # SPDX-License-Identifier: Unlicense
 
 repos:
--   repo: https://github.com/python/black
+-   repo: https://github.com/ python/black
     rev: 19.10b0
     hooks:
     - id: black
+      args:
+        - check
+        - target-version=py35
 #-   repo: https://github.com/fsfe/reuse-tool
 #    rev: latest
 #    hooks:
