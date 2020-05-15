@@ -8,8 +8,8 @@ repos:
     hooks:
     - id: black
     -  args:
-        - check
-        - target-version=py35
+        - "--check"
+        - "--target-version=py35"
 #-   repo: https://github.com/fsfe/reuse-tool
 #    rev: latest
 #    hooks:
