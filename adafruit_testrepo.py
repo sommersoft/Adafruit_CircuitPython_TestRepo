@@ -27,12 +27,14 @@ Implementation Notes
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_TestRepo.git"
 
+foo = "This is a really really really really really really really really really really really really...really long line that black will re-format."
+print(foo)
 
 class Test:
     """Test class."""
 
     def __init__(self):
-        self._test_value = "Untested"
+        self._test_value = 'Untested'
 
     @staticmethod
     def test():
