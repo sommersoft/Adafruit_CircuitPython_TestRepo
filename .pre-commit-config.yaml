@@ -7,13 +7,13 @@ repos:
     rev: 19.10b0
     hooks:
     - id: black
--   repo: https://github.com/fsfe/reuse-tool
-    rev: latest
-    hooks:
-    - id: reuse
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
-    hooks:
-    -   id: check-yaml
-    -   id: end-of-file-fixer
-    -   id: trailing-whitespace
+#-   repo: https://github.com/fsfe/reuse-tool
+#    rev: latest
+#    hooks:
+#    - id: reuse
+#-   repo: https://github.com/pre-commit/pre-commit-hooks
+#    rev: v2.3.0
+#    hooks:
+#    -   id: check-yaml
+#    -   id: end-of-file-fixer
+#    -   id: trailing-whitespace
